@@ -1,0 +1,14 @@
+[unit]
+Description=my cryptage
+After=network.target
+
+[Service]
+Type=oneshot
+RemainAfterExit=yes
+ExecStart=/home/$USER/cryptoProject/script/crypt.sh
+WorkingDirectory=/home/$USER
+User=$USER
+Group=$USER
+
+[Install]
+WantedBy=multi-user.target
